@@ -2,11 +2,20 @@ var fs = require('fs')
   , path = require('path')
 
   , after = require('after')
+    // include all files
+  , defaultFilter = function () { return true }
 
-module.exports = function (dir, callback) {
+module.exports = function (dir, filter, callback) {
+  if (!callback) {
+    callback = filter
+    filter = defaultFilter
+  }
+
   fs.readdir(dir, function (err, files) {
     if (err)
       return callback(err)
+
+    files = files.filter(filter)
 
     var done = after(files.length, callback)
 

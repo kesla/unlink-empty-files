@@ -33,5 +33,25 @@ test('simple', function (t) {
     t.deepEqual(fs.readdirSync(directory), [ 'bar', 'foo', 'hello' ])
     t.end()
   })
+})
+
+test('with filter-function', function (t) {
+  var directory = newDirectory()
+    , filter = function (filename) {
+        // filter all files with a bar-prefix
+        return filename.slice(0, 3) === 'bar'
+      }
+
+  fs.writeFileSync(directory + '/foo', '')
+  fs.writeFileSync(directory + '/bar', '')
+  fs.writeFileSync(directory + '/bar2', 'world')
+
+  unlinkEmptyFiles(directory, filter, function (err) {
+    if (err)
+      return t.end(err)
+
+    t.deepEqual(fs.readdirSync(directory), [ 'bar2', 'foo' ])
+    t.end()
+  })
 
 })
