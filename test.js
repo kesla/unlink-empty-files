@@ -30,7 +30,7 @@ test('simple', function (t) {
     if (err)
       return t.end(err)
 
-    t.deepEqual(fs.readdirSync(directory), [ 'bar', 'foo', 'hello' ])
+    t.deepEqual(fs.readdirSync(directory).sort(), [ 'bar', 'foo', 'hello' ])
     t.end()
   })
 })
@@ -50,7 +50,7 @@ test('with filter-function', function (t) {
     if (err)
       return t.end(err)
 
-    t.deepEqual(fs.readdirSync(directory), [ 'bar2', 'foo' ])
+    t.deepEqual(fs.readdirSync(directory).sort(), [ 'bar2', 'foo' ])
     t.end()
   })
 
