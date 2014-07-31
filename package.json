@@ -1,0 +1,19 @@
+{
+  "name": "unlink-empty-files",
+  "version": "0.0.0",
+  "description": "given a directory, unlink (remove) all files with a length of 0",
+  "main": "unlunk-empty-files.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "author": "David Björklund <david.bjorklund@gmail.com> (http://davidbjorklund.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "mkdirp": "^0.5.0",
+    "rimraf": "^2.2.8",
+    "tape": "^2.13.4"
+  },
+  "dependencies": {
+    "after": "^0.8.1"
+  }
+}
