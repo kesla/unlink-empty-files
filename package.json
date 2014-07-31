@@ -1,6 +1,6 @@
 {
   "name": "unlink-empty-files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "given a directory, unlink (remove) all files with a length of 0",
   "main": "unlink-empty-files.js",
   "scripts": {
