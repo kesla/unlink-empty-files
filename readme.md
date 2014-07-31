@@ -1,4 +1,4 @@
-# unlink-empty-files
+# unlink-empty-files[![build status](https://secure.travis-ci.org/kesla/unlink-empty-files.svg)](http://travis-ci.org/kesla/unlink-empty-files)
 
 given a directory, unlink (remove) all files with a length of 0
 

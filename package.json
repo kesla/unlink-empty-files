@@ -15,5 +15,13 @@
   },
   "dependencies": {
     "after": "^0.8.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kesla/unlink-empty-files.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kesla/unlink-empty-files/issues"
+  },
+  "homepage": "https://github.com/kesla/unlink-empty-files"
 }
