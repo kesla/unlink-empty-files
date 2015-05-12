@@ -24,7 +24,9 @@ module.exports = function (dir, filter, callback) {
       fs.stat(
           file
         , function (err, stat) {
-            if (!stat.isFile() || stat.size > 0)
+            if (err)
+              done(err)
+            else if (!stat.isFile() || stat.size > 0)
               done()
             else
               fs.unlink(file, done)
